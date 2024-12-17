@@ -1,0 +1,391 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: #f9f9f9;
+}
+
+.wrapper-container {
+  margin: 20px 10px;
+}
+
+/* IPO page styling start*/
+
+.ipo-table {
+  max-width: 100%;
+  overflow-x: auto;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #eeeeee;
+
+    td,
+    th {
+      white-space: nowrap;
+    }
+
+    td:not(:first-child),
+    th:not(:first-child) {
+      text-align: center;
+    }
+
+    thead {
+      display: table-header-group;
+      background-color: #f9f9f9;
+
+      th {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #eeeeee;
+        color: #888888;
+        font-size: 12px;
+      }
+    }
+
+    tbody {
+      tr {
+        margin-bottom: 10px;
+        border-radius: 8px;
+
+        td {
+          padding: 12px;
+          border: none;
+
+          &:before {
+            content: attr(data-label);
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #444444;
+          }
+
+          .company {
+            display: flex;
+            align-items: center;
+
+            img {
+              width: 40px;
+              height: 40px;
+              margin-right: 12px;
+            }
+
+            h4 {
+              margin: 0;
+              font-size: 16px;
+              color: #222222;
+            }
+          }
+        }
+      }
+    }
+
+    @media (min-width: 768px) {
+      tbody tr {
+        display: table-row;
+        background-color: #ffffff;
+
+        td {
+          display: table-cell;
+          border-bottom: 1px solid #eeeeee;
+
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* IPO page styling end*/
+
+.sub-detail {
+  margin: 0;
+  font-size: 14px;
+  line-height: normal;
+  color: #888888;
+}
+
+/* IPO detail page styling start*/
+
+.ipo-detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.back-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #eeeeee;
+
+  button {
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.left-section {
+  a {
+    text-decoration: none;
+  }
+}
+
+.left-section,
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.company-details {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+  }
+
+  .company-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f04e30;
+  }
+
+  .company-text {
+    margin-left: 10px;
+
+    h1 {
+      font-size: 20px;
+      color: #14183e;
+    }
+
+    p {
+      font-size: 14px;
+      color: #4a4a4a;
+    }
+  }
+}
+
+.download-icon {
+  width: 40px;
+  height: 40px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.apply-button {
+  display: flex;
+  align-items: center;
+
+  button {
+    background-color: #14183e;
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background-color: #14183e7b;
+    }
+  }
+}
+
+.ipo-details-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #eeeeee;
+  margin: 20px auto;
+  padding: 20px;
+
+  h3 {
+    font-size: 16px;
+    color: #1e1e2d;
+    margin-bottom: 16px;
+  }
+
+  .ipo-card {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    border-radius: 10px;
+    border: 1px solid #eeeeee;
+    padding: 20px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ipo-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .label {
+        font-size: 14px;
+        color: #888888;
+        margin-bottom: 4px;
+      }
+
+      .value {
+        font-size: 16px;
+        color: #1e1e2d;
+        font-weight: bold;
+
+        strong {
+          font-weight: 600;
+        }
+
+        .gains {
+          color: #1e1e2d;
+        }
+
+        .loss {
+          color: #ff4d4f;
+        }
+      }
+    }
+  }
+}
+
+.ipo-timeline-container {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.ipo-timeline-list {
+  display: flex;
+  overflow: hidden;
+  counter-reset: step;
+
+  li {
+    list-style-type: none;
+    color: #1e1e2d;
+    text-transform: uppercase;
+    font-size: 9px;
+    flex: 1;
+    position: relative;
+  }
+
+  li:before {
+    content: "\2713";
+    width: 30px;
+    line-height: 30px;
+    display: block;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #e0e3e1;
+    margin: 0 auto 5px auto;
+    z-index: 1;
+    position: relative;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+  }
+
+  li:after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: #c5c5c5;
+    position: absolute;
+    left: -50%;
+    top: 14px;
+  }
+
+  li:first-child:after {
+    content: none;
+  }
+
+  li.active:before,
+  li.active:after {
+    background: #27ae60;
+    color: #ffffff;
+  }
+
+  .step-title {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1e1e2d;
+  }
+
+  .step-date {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #888888;
+  }
+}
+
+/* IPO detail page styling end*/
+@media (max-width: 767px) {
+  .ipo-item {
+    justify-content: unset;
+  }
+
+  .ipo-timeline-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+
+    li {
+      display: flex;
+      align-items: baseline;
+      justify-content: start;
+      gap: 10px;
+    }
+
+    li:after {
+      left: -39%;
+      top: 14px;
+      transform: rotate(90deg);
+    }
+
+    li:last-child:after {
+      content: none;
+    }
+  }
+
+  .ipo-detail-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+  }
+}
